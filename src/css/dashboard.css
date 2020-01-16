@@ -9,3 +9,13 @@
     min-height: 84px;
       width: 2498px;
 }
+.toolBar{
+    background-color: #881127;
+    height: 77px;
+    width: 100%;
+}
+.bookTitle{
+    color: white;
+    font-size: large;
+    margin-top: -12px;
+}

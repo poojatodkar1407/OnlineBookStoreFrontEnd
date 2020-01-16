@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './dashboard.css';
+import'../css/dashboard.css'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -13,7 +13,7 @@ class Dashboard extends Component {
         console.log("this.props", this.props)
 
         return <div>
-            <AppBar position="fixed">
+            {/* <AppBar position="fixed">
                 <Toolbar>
                     <IconButton edge="start" color="inherit" aria-label="menu">
                         <MenuIcon />
@@ -22,7 +22,10 @@ class Dashboard extends Component {
                         Tall Tales Book Store
                     </Typography>
                 </Toolbar>
-            </AppBar>
+            </AppBar> */}
+            <div className="toolBar">
+                <h1 className="bookTitle">Tall Tales Book Store</h1>
+                </div>
         </div>
     }
 
