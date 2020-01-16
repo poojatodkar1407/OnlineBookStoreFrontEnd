@@ -11,11 +11,20 @@
 }
 .toolBar{
     background-color: #881127;
-    height: 77px;
+    line-height: 77px;
+    margin-top: 0px;
     width: 100%;
+    flex-direction: column;
 }
 .bookTitle{
+    
     color: white;
-    font-size: large;
-    margin-top: -12px;
+    font-size: 36px;
+    display: flex;
+    margin-left: 13%;
+}
+
+.searchBar{
+    margin-left: 94px;
+    margin-top: 15px;
 }
