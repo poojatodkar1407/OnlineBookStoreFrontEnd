@@ -11,7 +11,7 @@
 }
 .toolBar{
     background-color: #881127;
-    line-height: 77px;
+    line-height: 63px;
     margin-top: 0px;
     width: 100%;
     flex-direction: column;
@@ -26,5 +26,84 @@
 
 .searchBar{
     margin-left: 94px;
-    margin-top: 15px;
+    margin-top: 19px;
+   
+}
+
+.MuiOutlinedInput-root {
+    position: relative;
+    border-radius: 4px;
+    width: 524px;
+    height: 37px;
+    background-color: white;
+    line-height: 5%;
+}
+
+.MuiPaper-rounded {
+    border-radius: 4px;
+    margin-left: 135px;
+    width: 543px;
+    height: 37px;
+    margin-top: 14px;
+}
+
+
+.MuiIconButton-label {
+    width: 100%;
+    display: flex;
+    margin-top: -29px;
+  
+}
+
+.card{
+    width: 15%;
+    margin-top: 3%;
+    margin-left: 11%;
+    height: 332px;
+    display: flex;
+    flex-direction: column;
+    border: 0px solid lightgray;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.imageSpace{
+    width:100%;
+    background-color:#f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookImg{
+    width: 47%;
+    height: 150px;
+    padding: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookName{
+    font-size: 16px;
+    padding-left: 15px;
+    color: black;
+    font-weight: 500;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.authorName{
+    font-size: 12px;
+    padding-left: 15px;
+    color: #9b9898;
+}
+.buttonBuyNow{
+    width: 60%;
+    font-size: 16px;
+    height: 27px;
+    border-radius: 2px;
+    background-color: #a03037;
+    color: white;
+    text-align: center;
+    padding-top: 8px;
+    margin-left: 20%;
+    margin-top: 7%;
 }
