@@ -1,44 +1,33 @@
 import React, { Component } from 'react';
 import '../css/dashboard.css'
 import '../assets/book.png';
-import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 
 
-
 class Dashboard extends Component {
 
+    handleClick = () => {
+        this.props.history.push('/customerDetails')
+    }
+    
     render() {
-        console.log("this.props", this.props)
-
         return <div className="main">
             <div className="toolBar">
-
                 <div className="bookTitle">
                     Tall Tales Book Store
-    
-    
                     <Paper component="form">
                         <IconButton type="submit" aria-label="search">
                             <SearchIcon />
                             <InputBase placeholder="search..." variant="outlined" />
                         </IconButton>
-
                     </Paper>
-                    {/* <div className="searchBar"> 
-                    <form>
-                    <SearchIcon />           
-                       <TextField id="outlined-basic" placeholder="search..." variant="outlined" />
-                </form>
-                </div> */}
                 </div>
-
             </div>
 
-            <div className='subMain'>
+            <div className='subMain1'>
                 <div className='lower'>
                     <h1>Books</h1>
                     <div>
@@ -49,7 +38,7 @@ class Dashboard extends Component {
                             <div className='bookName'>The Mist</div>
                             <div className='authorName'>by Stephen King</div>
                             <div className='bookName'>Rs.117</div>
-                            <div className='buttonBuyNow'>BUY NOW</div>
+                            <div className='buttonBuyNow' onClick={this.handleClick}>BUY NOW</div>
                         </div>
                     </div>
                 </div>

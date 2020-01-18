@@ -1,0 +1,22 @@
+
+.subOrder{
+    width: 50%;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 25%;
+    margin-top: 1%;
+}
+
+.orderTitle{
+    width: 100%;
+    margin-left: 27%;
+        margin-top: -5%;
+    font-size: 28px;
+}
+
+.para{
+    margin-left: 5%;
+    font-size: 18px;
+}
