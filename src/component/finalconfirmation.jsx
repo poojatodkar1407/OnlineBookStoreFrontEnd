@@ -6,8 +6,12 @@ import hurrayImage from '../assets/hurray.webp';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 class FinalConfirmation extends Component {
+    constructor(props) {
+        super(props);
+    }
 
     render() {
+        console.log("this.props in final confirmation",this.props)
         return <div>
             <div className="toolBar">
                 <div className="bookTitle">
@@ -27,7 +31,7 @@ class FinalConfirmation extends Component {
                  further communication</p></div>
             </div>
 
-            
+
         </div>
     }
 }

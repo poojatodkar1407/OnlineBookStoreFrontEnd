@@ -10,6 +10,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import axios from "axios";
 
 
 import { withStyles } from '@material-ui/core/styles';
@@ -26,6 +27,53 @@ const CssTextField = withStyles({
     },
 })(TextField);
 class CustomerDetails extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            name: '',
+            email: '',
+            address: '',
+            country: '',
+            pinCode: ''
+        };
+        console.log("this.state in constructor",this.state);
+        this.addCustomerDetails = this.addCustomerDetails.bind(this)
+        this.handleChange=this.handleChange.bind(this);
+      }
+
+      handleChange(event){
+    //     const{ name , value }=event.target;
+    //   this.setState({ [name]: value });
+    this.setState({ [event.target.name]: event.target.value });
+    console.log("event",this.state.name)
+
+
+    }
+  
+      addCustomerDetails(){
+        var data = {
+          name: this.state.name,
+          email: this.state.email,
+          address: this.state.address,
+          country: this.state.country,
+          pinCode: this.state.pinCode
+    
+        }
+        console.log("this.state in customer detail",data);
+        axios.post('http://localhost:8080/TallTalesBooks/AddUserDetails', data,{
+            headers: {
+              'Content-Type': 'application/json' }})
+        .then(response => {
+            console.log(response)
+            this.props.history.push('/ordersuccessfull')
+        })
+        .catch(error => {
+            console.log(error)
+        })
+
+      }
+   
 
     render() {
         return (<div>
@@ -45,31 +93,35 @@ class CustomerDetails extends Component {
                 <h2>Customer Details</h2>
                 <div className='content'>
                     <div className='name' >
-                        <TextField id="outlined-basic" label="Name" variant="outlined" style={{ width: '370px' }} />
+                        <TextField id="outlined-basic" label="Name"
+                          value={this.state.name}
+                          onChange={this.handleChange}
+                          name="name"
+                        variant="outlined" style={{ width: '370px' }} />
                     </div>
                     <div className='phonenumber'>
-                        <TextField id="outlined-basic" label="Phone Number" variant="outlined" style={{ width: '370px' }} />
+                        <TextField id="outlined-basic" label="Phone Number"  variant="outlined" style={{ width: '370px' }} />
                     </div>
                 </div>
 
                 <div className='content'>
                     <div className='name'>
-                        <TextField id="outlined-basic" label="Pincode" variant="outlined" style={{ width: '370px' }} />
+                        <TextField id="outlined-basic" name="pinCode" label="Pincode" onChange={this.handleChange} variant="outlined" style={{ width: '370px' }} />
                     </div>
                     <div className='phonenumber'>
-                        <TextField id="outlined-basic" label="Locality" variant="outlined" style={{ width: '370px' }} />
+                        <TextField id="outlined-basic" name="email" label="Email Id" onChange={this.handleChange} variant="outlined" style={{ width: '370px' }} />
                     </div>
                 </div>
 
                 <div className='address'>
-                    <CssTextField id="outlined-multiline-static" label="Address" multiline rows="3" variant="outlined" style={{ width: '775px' }} />
+                    <CssTextField id="outlined-multiline-static" name="address"label="Address" onChange={this.handleChange} multiline rows="3" variant="outlined" style={{ width: '775px' }} />
                 </div>
                 <div className='content'>
                     <div className='name'>
-                        <TextField id="outlined-basic" label="City/Town" variant="outlined" style={{ width: '370px' }} />
+                        <TextField id="outlined-basic" label="City/Town" name="city" variant="outlined" style={{ width: '370px' }} />
                     </div>
                     <div className='phonenumber'>
-                        <TextField id="outlined-basic" label="Landmark" variant="outlined" style={{ width: '370px' }} />
+                        <TextField id="outlined-basic" label="Country" name="country" onChange={this.handleChange} variant="outlined" style={{ width: '370px' }} />
                     </div>
                 </div>
 
@@ -101,7 +153,7 @@ class CustomerDetails extends Component {
                         </RadioGroup>
                     </FormControl>
 
-                    <Button variant="contained" color="primary" style={{ float: 'right' }}>
+                    <Button variant="contained" color="primary" style={{ float: 'right' }} onClick={this.addCustomerDetails}>
                         Continue </Button>
                 </div>
             </div>

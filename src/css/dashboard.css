@@ -48,7 +48,7 @@
 }
 
 .card{
-    width: 15%;
+    width: 60%;
     margin-top: 3%;
     margin-left: 11%;
     height: 332px;
@@ -76,7 +76,7 @@
 
 .bookName{
     font-size: 16px;
-    padding-left: 15px;
+    padding-left: 47px;
     color: black;
     font-weight: 500;
     padding-top: 4px;
@@ -84,7 +84,7 @@
 }
 .authorName{
     font-size: 12px;
-    padding-left: 15px;
+    padding-left: 47px;
     color: #9b9898;
 }
 .buttonBuyNow{
@@ -99,4 +99,19 @@
     padding-top: 8px;
     margin-left: 20%;
     margin-top: 7%;
+}
+
+.cardDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+
+}
+
+.allBook{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
