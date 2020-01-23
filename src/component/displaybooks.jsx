@@ -2,6 +2,23 @@ import React, { Component } from 'react';
 import '../css/dashboard.css';
 import { withRouter } from 'react-router-dom';
 
+// Login Component 
+function Login(props) {
+    return (
+        <button onClick={props.clickFunc}>
+            BUY NOW           
+            </button>
+    );
+}
+
+// Logout Component 
+function Logout(props) {
+    return (
+        <button onClick={props.clickFunc}>
+            ADDED TO THE BAG
+           </button>
+    );
+}
 class DisplayBooks extends Component {
 
     constructor(props) {
@@ -11,6 +28,7 @@ class DisplayBooks extends Component {
     handleClick = () => {
         this.props.history.push('/customerDetails')
     }
+
 
     render() {
         console.log("this.props", this.props.books.books)
@@ -35,7 +53,7 @@ class DisplayBooks extends Component {
             )
         })
         return (<div className='cardDiv'>
-            {book}
+            {z}
         </div>
         )
     }

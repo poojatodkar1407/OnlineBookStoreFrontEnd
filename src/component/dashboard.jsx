@@ -21,13 +21,11 @@ class Dashboard extends Component {
     }
 
     getAllbooks() {
-        axios.get("http://localhost:8080/TallTalesBooks/list", {}).then((res) => {
+        axios.get("http://localhost:8080/TallTalesBooksst", {}).then((res) => {
             //on success
-            console.log("response is", res)
             this.setState({
                 books: res['data']
             });
-            console.log("this.state", this.state)
         }).catch((error) => {
             //on error
             alert("There is an error in API call.");
@@ -39,7 +37,6 @@ class Dashboard extends Component {
     }
 
     render() {
-
         return <div className="main">
             <div className="toolBar">
                 <div className="bookTitle">
@@ -52,7 +49,6 @@ class Dashboard extends Component {
                     </Paper>
                 </div>
             </div>
-
             <div className='subMain1'>
                 <div className='lower'>
                     <h1>Books</h1>
@@ -60,9 +56,7 @@ class Dashboard extends Component {
                 </div>
             </div>
         </div>
-
     }
-
 }
 
 export default Dashboard;
